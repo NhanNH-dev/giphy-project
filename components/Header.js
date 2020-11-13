@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import Search from "./Search";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ const Header = () => {
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
+          <Search />
           <Nav className="ml-auto" navbar>
             <NavItem>
               <Link href="/myfavorite">
