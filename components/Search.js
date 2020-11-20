@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 const Search = () => {
   const router = useRouter();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("cat");
   const clickSubmit = (e) => {
     e.preventDefault();
     if (value != "") {
@@ -24,10 +24,13 @@ const Search = () => {
 
   const formSearchGif = () => (
     <form onSubmit={clickSubmit}>
-      <div style={{ display: "flex", width: '360px', marginLeft: '50px' }} className="form-group">
+      <div
+        style={{ display: "flex", width: "360px", marginLeft: "50px" }}
+        className="form-group"
+      >
         <input
           type="text"
-          placeholder="What image do you want to search?"
+          placeholder="Search all GIFs and TICKETs"
           className="form-control"
           onChange={handleChange}
           value={value}
