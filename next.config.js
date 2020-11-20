@@ -1,5 +1,5 @@
 import withCSS from "@zeit/next-css";
-module.exports = withCSS({
+export default withCSS({
   publicRuntimeConfig: {
     APP_NAME: "GIPHY",
     APP_DEVELOPMENT: "https://api.giphy.com/v1/gifs/search",
