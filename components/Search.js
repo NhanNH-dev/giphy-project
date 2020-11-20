@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 const Search = () => {
   const router = useRouter();
-  const [value, setValue] = useState("cat");
+  const [value, setValue] = useState("");
   const clickSubmit = (e) => {
     e.preventDefault();
     if (value != "") {
@@ -12,7 +12,7 @@ const Search = () => {
           query: { value },
         },
         () => {
-          setValue("");
+          setValue('');
         }
       );
     }
