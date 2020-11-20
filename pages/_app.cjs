@@ -15,6 +15,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <TopProgressBar />
       <Component {...pageProps} />
+      <script type="module"></script>
     </>
   );
 }
