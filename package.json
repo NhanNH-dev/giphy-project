@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "babel pages/index.js --out-file public/app.js",
-    "start": "next start"
+    "start": "babel pages/index.js"
   },
   "keywords": [],
   "author": "",
