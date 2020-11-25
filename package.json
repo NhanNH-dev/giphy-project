@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "babel pages/index.js --out-file public/app.js",
     "start": "next start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.5.3",
     "esm": "^3.2.25",
