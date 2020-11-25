@@ -22,7 +22,8 @@ const MyFavorite = () => {
   useEffect(() => {
     const json = localStorage.getItem("my-favorite" || undefined);
     const items = JSON.parse(json);
-    setValue(items);
+    const filterDuplicateItem = items.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
+    setValue(filterDuplicateItem);
   }, []);
 
   return (
