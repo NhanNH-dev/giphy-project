@@ -351,6 +351,14 @@
     "@babel/helper-create-class-features-plugin" "^7.12.1"
     "@babel/helper-plugin-utils" "^7.10.4"
 
+"@babel/plugin-proposal-do-expressions@^7.12.1":
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-do-expressions/-/plugin-proposal-do-expressions-7.12.1.tgz#8d7f1bc532d8168147555c26e3db922cc0dfd2f8"
+  integrity sha512-bpJ6Bfrzvdzb0vG6zBSNh3HLgFKh+S2CBpNmaLRjg2u7cNkzRPIqBjVURCmpG6pvPfKyxkizwbrXwpYtW3a9cw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.10.4"
+    "@babel/plugin-syntax-do-expressions" "^7.12.1"
+
 "@babel/plugin-proposal-dynamic-import@^7.10.4":
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.12.1.tgz#43eb5c2a3487ecd98c5c8ea8b5fdb69a2749b2dc"
@@ -484,6 +492,13 @@
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.12.1.tgz#bcb297c5366e79bebadef509549cd93b04f19978"
   integrity sha512-U40A76x5gTwmESz+qiqssqmeEsKvcSyvtgktrm0uzcARAmM9I1jR221f6Oq+GmHrcD+LvZDag1UTOTe2fL3TeA==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.10.4"
+
+"@babel/plugin-syntax-do-expressions@^7.12.1":
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-do-expressions/-/plugin-syntax-do-expressions-7.12.1.tgz#6b83dfab79540b66912b559860ce6d4be4f7d960"
+  integrity sha512-a9TknRXkzfetNjOWSWnPIG/Y7x+elzcmKng2Qpvh8QaqdPo0OABizTjco8YO8r5xZNQfE58YHq7lWR+PKwHyxg==
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
