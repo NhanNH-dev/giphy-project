@@ -1,5 +1,6 @@
-import withCSS from "@zeit/next-css";
-export default withCSS()
+// import withCSS from "@zeit/next-css";
+// export default withCSS()
+
 // module.exports = withCSS({
 //   publicRuntimeConfig: {
 //     APP_NAME: "GIPHY",
@@ -8,3 +9,6 @@ export default withCSS()
 //     API_KEY: "4ehJ726BPs10cGcXK4FrIlJAsjqPqywX",
 //   },
 // });
+const withTM = require('next-transpile-modules')(['@zeit/next-css']);
+
+module.exports = withTM();
