@@ -9,6 +9,6 @@
 //     API_KEY: "4ehJ726BPs10cGcXK4FrIlJAsjqPqywX",
 //   },
 // });
-const withTM = require('next-transpile-modules')(['@zeit/next-css']);
+const withTM = require('next-transpile-modules')(['@zeit/next-css','@babel/plugin-proposal-do-expressions']);
 
 module.exports = withTM();
