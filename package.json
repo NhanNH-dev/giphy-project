@@ -14,6 +14,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.5.3",
+    "esm": "^3.2.25",
     "next": "^10.0.1",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",

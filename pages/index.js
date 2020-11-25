@@ -54,7 +54,7 @@ function Index({ data }) {
     );
   }, [saveImgLocalStorage]);
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>giphy</title>
       </Head>
@@ -79,7 +79,7 @@ function Index({ data }) {
           </button>
         )}
       </Layout>
-    </>
+    </React.Fragment>
   );
 }
 
