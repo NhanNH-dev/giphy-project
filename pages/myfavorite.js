@@ -22,7 +22,9 @@ const MyFavorite = () => {
   useEffect(() => {
     const json = localStorage.getItem("my-favorite" || undefined);
     const items = JSON.parse(json);
-    const filterDuplicateItem = items.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
+    const filterDuplicateItem = items.filter(
+      (v, i, a) => a.findIndex((t) => t.id === v.id) === i
+    );
     setValue(filterDuplicateItem);
   }, []);
 
@@ -82,7 +84,7 @@ const MyFavorite = () => {
             </div>
           ))}
       </div>
-      {!value && <p>No have Data</p>}
+      {value.length < 1 && <p>No have Data</p>}
     </Layout>
   );
 };

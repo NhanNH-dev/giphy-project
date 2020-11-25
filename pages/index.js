@@ -6,11 +6,11 @@ import GirdImage from "../components/GirdImage";
 import { API, API_KEY } from "../config";
 import Head from "next/head";
 
-const QUANTITY_PER_PAGE = 2;
+const QUANTITY_PER_PAGE = 4;
 
 function Index({ data }) {
   const router = useRouter();
-  const [next, setNext] = useState(2);
+  const [next, setNext] = useState(4);
   const [saveImgLocalStorage, setSaveImgLocalStorage] = useState([]);
   const [fetchImgFromUrl, setFetchImgFromUrl] = useState([]);
   const [success, setSuccess] = useState(false);
