@@ -6,21 +6,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "babel pages/index.js --out-file public/app.js",
-    "start": "babel pages/index.js"
+    "build": "next build",
+    "start": "next start -p $PORT"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.7",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.5.3",
     "esm": "^3.2.25",
     "next": "^10.0.1",
-    "next-transpile-modules": "^4.1.0",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
