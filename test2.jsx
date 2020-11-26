@@ -4,7 +4,7 @@ export class test2 extends Component {
     render() {
         return (
             <React.Fragment>
-                class component!
+             <strong>class component!</strong>   
             </React.Fragment>
         )
     }
