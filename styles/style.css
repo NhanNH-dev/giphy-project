@@ -1,6 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
 #nprogress bar {
   height: 10px !important;
 }
-.myfavorite{
-    color: rgb(26, 37, 37);
+.myfavorite {
+  color: rgb(26, 37, 37);
+}
+.navItem{
+  cursor: pointer;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+}
+.inputSearch_Btn {
+  display: inline-flex;
+  width: 360px;
+  margin-left: 50px;
+}
+.marginUl {
+  margin-right: auto;
+}
+@media only screen and (max-width: 768px) {
+  .marginUl {
+    margin: 0;
+  }
+  .form_search {
+    width: 100%;
+  }
+  .inputSearch_Btn {
+    width: 100%;
+    margin: 0;
+  }
 }

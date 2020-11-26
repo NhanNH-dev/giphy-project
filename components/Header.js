@@ -9,22 +9,14 @@ const Header = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link href="/">
-          <NavLink style={{fontSize: '25px'}} className="font-weight-bold">{APP_NAME}</NavLink>
+          <NavLink style={{ fontSize: "25px" }} className="font-weight-bold">
+            {APP_NAME}
+          </NavLink>
         </Link>
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav marginUl">
           <Link href="/myfavorite">
-            <NavLink style={{ cursor: "pointer" }}>My Favorite</NavLink>
+            <NavLink className="navItem">My Favorite</NavLink>
           </Link>
-          <li className="nav-item">
-            <a
-              className="nav-link disabled"
-              href="#"
-              tabIndex={-1}
-              aria-disabled="true"
-            >
-              Disabled
-            </a>
-          </li>
         </ul>
         <Search />
       </nav>
