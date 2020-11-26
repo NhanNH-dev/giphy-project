@@ -22,6 +22,10 @@
 .marginUl {
   margin-right: auto;
 }
+.form-group{
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 768px) {
   .marginUl {
     margin: 0;
@@ -33,4 +37,9 @@
     width: 100%;
     margin: 0
   }  
+}
+@media only screen and (max-width:352px) {
+  .form-control::placeholder{
+    font-size: 12px;
+  }
 }
