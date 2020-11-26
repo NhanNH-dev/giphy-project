@@ -7,6 +7,7 @@ const theme = "ad"
     return (
         <div>
             <h1>{me}</h1>
+            <p>{theme}</p>
         </div>
     )
 }
