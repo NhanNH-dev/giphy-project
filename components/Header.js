@@ -10,6 +10,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link href="/">
           <NavLink style={{ fontSize: "25px" }} className="font-weight-bold">
+            
             {APP_NAME}
           </NavLink>
         </Link>
