@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class test2 extends Component {
   constructor(props) {
     this.state = {
-      name: "",
+      name: "Fernando Torres",
     };
   }
   render() {
