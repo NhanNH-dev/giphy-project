@@ -4,6 +4,7 @@ export class test2 extends Component {
   constructor(props) {
     this.state = {
       name: "Fernando Torres",
+      age: 32
     };
   }
   render() {
