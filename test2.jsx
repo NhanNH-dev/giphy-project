@@ -3,7 +3,8 @@ import React, { Component } from "react";
 export class test2 extends Component {
   constructor(props) {
     this.state = {
-      name: "",
+      name: "Fernando Torres",
+      age: 32
     };
   }
   render() {
@@ -15,6 +16,7 @@ export class test2 extends Component {
         <span> them the span</span>
         <span> them the span</span>
         <h2>{this.state.name}</h2>
+        <h2>{this.state.age}</h2>
       </React.Fragment>
     );
   }
