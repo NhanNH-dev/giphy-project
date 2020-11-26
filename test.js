@@ -3,3 +3,5 @@
 const me ="t dang o master";
 const me ="t dang o master";
 const theme = "ad"
+const me ="t dang o master";
+const theme = "ad"
