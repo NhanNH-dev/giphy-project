@@ -14,7 +14,7 @@ export class test2 extends Component {
         <span> them the span</span>
         <span> them the span</span>
         <span> them the span</span>
-        <span> them the span</span>
+        <h2>{this.state.name}</h2>
       </React.Fragment>
     );
   }
