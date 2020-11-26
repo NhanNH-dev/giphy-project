@@ -1,5 +1,5 @@
 import React from "react";
-
+import Config from './config'
 const Test = () => {
   const me = "t dang o master";
   const theme = "ad";
