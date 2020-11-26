@@ -1,38 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { APP_NAME } from "../config";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  Nav,
-  NavItem,
-  NavLink,
-} from "reactstrap";
+import { NavLink } from "reactstrap";
 import Search from "./Search";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link href="/">
-          <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
+          <NavLink style={{fontSize: '25px'}} className="font-weight-bold">{APP_NAME}</NavLink>
         </Link>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Search />
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <Link href="/myfavorite">
-                <NavLink style={{ cursor: "pointer" }}>My Favorite</NavLink>
-              </Link>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+        <ul className="navbar-nav mr-auto">
+          <Link href="/myfavorite">
+            <NavLink style={{ cursor: "pointer" }}>My Favorite</NavLink>
+          </Link>
+          <li className="nav-item">
+            <a
+              className="nav-link disabled"
+              href="#"
+              tabIndex={-1}
+              aria-disabled="true"
+            >
+              Disabled
+            </a>
+          </li>
+        </ul>
+        <Search />
+      </nav>
     </div>
   );
 };
