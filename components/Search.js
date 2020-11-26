@@ -19,10 +19,9 @@ const Search = () => {
   };
 
   const formSearchGif = () => (
-    <form onSubmit={clickSubmit}>
+    <form className='form_search' onSubmit={clickSubmit}>
       <div
-        style={{ display: "flex", width: "360px", marginLeft: "50px" }}
-        className="form-group"
+        className="form-group inputSearch_Btn"
       >
         <input
           type="text"
