@@ -8,6 +8,7 @@ const theme = "ad"
         <div>
             <h1>{me}</h1>
             <p>{theme}</p>
+            van dang o dev nhe
         </div>
     )
 }
