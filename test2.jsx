@@ -7,6 +7,8 @@ export class test2 extends Component {
              <strong>class component!</strong>   
                 class component!
                 <span> them the span</span>
+                <span> them the span</span>
+                <span> them the span</span>
             </React.Fragment>
         )
     }
