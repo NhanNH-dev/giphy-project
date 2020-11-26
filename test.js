@@ -3,12 +3,11 @@ import React from 'react'
 export const test = () => {
 
 const me ="t dang o master";
-const theme = "ad"
+const themes = "ad"
     return (
         <div>
             <h1>{me}</h1>
-            <p>{theme}</p>
-            van dang o dev nhe
+            <p>{themes}</p>
         </div>
     )
 }
