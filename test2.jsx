@@ -5,7 +5,6 @@ export class test2 extends Component {
         return (
             <React.Fragment>
              <strong>class component!</strong>   
-                class component!
                 <span> them the span</span>
                 <span> them the span</span>
                 <span> them the span</span>
