@@ -1,23 +1,19 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+
 const Search = () => {
   const router = useRouter();
   const [value, setValue] = useState("");
   const clickSubmit = (e) => {
     e.preventDefault();
     if (value != "") {
-      router.push(
-        {
-          pathname: "/",
-          query: { value },
-        },
-        () => {
-          setValue('');
-        }
-      );
+      router.push({
+        pathname: "/",
+        query: { value },
+      });
+      setValue("");
     }
   };
-
   const handleChange = (e) => {
     setValue(e.target.value);
   };
