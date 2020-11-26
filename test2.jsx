@@ -11,10 +11,6 @@ export class test2 extends Component {
     return (
       <React.Fragment>
         <strong>class component!</strong>
-        <span> them the span</span>
-        <span> them the span</span>
-        <span> them the span</span>
-        <span> them the span</span>
         <h2>{this.state.name}</h2>
         <h2>{this.state.age}</h2>
       </React.Fragment>
