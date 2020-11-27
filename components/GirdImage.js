@@ -1,14 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import ItemImage from "./ItemImage";
 
-const GirdImage = ({ listGif, handleClick }) => (
+const GirdImage = memo(({ listGif, handleClick }) => (
   <div className="gridForImage">
     {listGif &&
-      listGif.map((img, i) => (
+      listGif.map((img) => (
         <div key={img.id} className="card-columns">
-          <ItemImage  handleClick={handleClick} image={img} />
+          <ItemImage handleClick={handleClick} image={img} />
         </div>
       ))}
   </div>
-);
+));
 export default GirdImage;

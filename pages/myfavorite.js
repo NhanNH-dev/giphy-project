@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
+import { TRASH } from "../public/svg";
 
 const MyFavorite = () => {
   const [value, setValue] = useState([]);
-  const [success, setSuccess] = useState(false);
 
   const handleRemoveImage = (itemRemove) => {
     const arr = [...value];
@@ -12,11 +12,8 @@ const MyFavorite = () => {
       (item) => item.images.fixed_width.url !== itemRemove
     );
     window.localStorage.setItem("my-favorite", JSON.stringify(filteredItems));
-    setSuccess(true);
+    showNotification();
     setValue(filteredItems);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 2000);
   };
 
   useEffect(() => {
@@ -28,14 +25,20 @@ const MyFavorite = () => {
     setValue(filterDuplicateItem);
   }, []);
 
+  const showNotification = () => {
+    var x = document.getElementById("myNotification");
+    x.className = "show";
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
+    }, 2000);
+  };
+
   return (
     <Layout>
       <Header />
-      {success && (
-        <div className="alert alert-success" role="alert">
-          Remove Successfully!
-        </div>
-      )}
+      <div className="alert alert-success" id="myNotification" role="alert">
+        Removed!
+      </div>
       <div className="gridForImage">
         {value &&
           value.length > 0 &&
@@ -56,19 +59,7 @@ const MyFavorite = () => {
                   onClick={() => handleRemoveImage(item.images.fixed_width.url)}
                   title="Add My Favorite"
                 >
-                  <svg
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    className="bi bi-trash-fill"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"
-                    />
-                  </svg>
+                  {TRASH}
                 </button>
               </div>
             </div>
@@ -76,7 +67,7 @@ const MyFavorite = () => {
       </div>
       {value.length < 1 && (
         <div className="emptyImg">
-          <h3 className='text-emptyImg'>Empty!</h3>
+          <h3 className="text-emptyImg">Empty!</h3>
         </div>
       )}
     </Layout>

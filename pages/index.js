@@ -13,18 +13,20 @@ function Index({ data }) {
   const [next, setNext] = useState(4);
   const [saveImgLocalStorage, setSaveImgLocalStorage] = useState([]);
   const [fetchImgFromUrl, setFetchImgFromUrl] = useState([]);
-  const [success, setSuccess] = useState(false);
   //save img to myfavorite
   const handleClick = (item) => {
     if (saveImgLocalStorage.indexOf(item) == -1) {
-      setSuccess(true);
-      setTimeout(() => {
-        setSuccess(false);
-      }, 1000);
+      showSuccess();
       return setSaveImgLocalStorage((state) => [...state, item]);
     }
   };
-
+  const showSuccess = () => {
+    var x = document.getElementById("myNotification");
+    x.className = "show";
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
+    }, 3000);
+  };
   const getLocalStorage = () => {
     const valueLocalStorage = JSON.parse(
       window.localStorage.getItem("my-favorite" || [])
@@ -60,20 +62,18 @@ function Index({ data }) {
       </Head>
       <Layout>
         <Header />
-        {success && (
-          <div className="alert alert-success" role="alert">
-            Add Successfully!
-          </div>
-        )}
+        <div className="alert alert-success" id="myNotification" role="alert">
+          Add Successfully!
+        </div>
         <GirdImage
           listGif={fetchImgFromUrl.slice(0, next)}
           handleClick={handleClick}
         />
         {fetchImgFromUrl.length < 1 && (
-        <div className="indexPage-emptyImg">
-          <h3 className='indexPage-text'>Look it up here! :) </h3>
-        </div>
-      )}
+          <div className="indexPage-emptyImg">
+            <h3 className="indexPage-text">Look it up here! :) </h3>
+          </div>
+        )}
         {next < fetchImgFromUrl.length && (
           <button
             className="btn btn-primary"
