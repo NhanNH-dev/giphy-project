@@ -17,7 +17,7 @@ const Header = () => {
         </Link>
         <ul className="navbar-nav marginUl">
           <Link href="/myfavorite">
-            <NavLink className="navItem">My Favorite</NavLink>
+            <NavLink className="navItem myfavorite-animate">My Favorite</NavLink>
           </Link>
         </ul>
         <Search />

@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
 * {
   box-sizing: border-box;
 }
-
 #nprogress bar {
   height: 10px !important;
 }
@@ -32,24 +32,102 @@
   right: 0;
   background-color: #008cba;
   overflow: hidden;
-  width: 80%;
+  width: 100%;
   height: 0;
   transition: 0.5s ease;
 }
-.card:hover .overlay, .card:active .overlay {
+.card:hover .overlay,
+.card:active .overlay {
   height: 40%;
+  width: 55px;
 }
 .text {
-  white-space: nowrap;
-  color: white;
-  font-size: 20px;
+  font-size: 22px;
   position: absolute;
-  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+.gridForImage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-gap: 10px;
+}
+.gridForItem {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+.emptyImg {
+  background-image: url("../public/empty.png"); /* The image used */
+  background-color: rgb(40, 167, 69); /* Used if the image is unavailable */
+  height: 400px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  position: relative;
+}
+.indexPage-emptyImg {
+  background-image: url("../public/direction-up.png"); /* The image used */
+  background-color: transparent; /* Used if the image is unavailable */
+  height: 400px; /* You must set a specified height */
+  background-position: right -47px; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain;
+  position: relative;
+}
+.text-emptyImg {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: "Nerko One", cursive;
+}
+.indexPage-text {
+  position: absolute;
+  bottom: 0%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: "Nerko One", cursive;
+}
+.myfavorite-animate {
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    rgba(19, 121, 20, 1) 27%,
+    rgba(9, 121, 112, 1) 42%,
+    rgba(0, 212, 255, 1) 74%
+  );
+  background-size: 200% auto !important;
+
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: shine 3s linear infinite !important;
+}
+
+@keyframes shine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.5s;
+    transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0.2;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .marginUl {
     margin: 0;
@@ -62,8 +140,24 @@
     margin: 0;
   }
 }
+@media (max-width: 991px) {
+  .overlay {
+    width: 67px;
+  }
+  .text-emptyImg {
+    bottom: 10%;
+  }
+}
 @media only screen and (max-width: 352px) {
   .form-control::placeholder {
     font-size: 12px;
+  }
+  .indexPage-emptyImg {
+    margin-top: 25px;
+  }
+  .indexPage-text {
+    left: 37%;
+    bottom: 25%;
+    font-size: 20px;
   }
 }

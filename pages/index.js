@@ -69,6 +69,11 @@ function Index({ data }) {
           listGif={fetchImgFromUrl.slice(0, next)}
           handleClick={handleClick}
         />
+        {fetchImgFromUrl.length < 1 && (
+        <div className="indexPage-emptyImg">
+          <h3 className='indexPage-text'>Look it up here! :) </h3>
+        </div>
+      )}
         {next < fetchImgFromUrl.length && (
           <button
             className="btn btn-primary"

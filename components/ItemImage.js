@@ -17,8 +17,7 @@ const ItemImage = ({ image, handleClick }) => {
     <div className="card" style={{position: 'relative'}}>
       <img
         src={u}
-        style={{ width: w + "px", height: "160px" }}
-        className="rounded mx-auto"
+        className="rounded gridForItem"
         alt="gif"
       />
       <div className="card-footers overlay">

@@ -36,55 +36,49 @@ const MyFavorite = () => {
           Remove Successfully!
         </div>
       )}
-      <h2 className="myfavorite">MyFavorite page</h2>
-      <div className="row row-cols-1 row-cols-md-4">
+      <div className="gridForImage">
         {value &&
           value.length > 0 &&
-          value.map((item, i) => (
-            <div key={i} className="col mb-4">
-              <div className="card">
-                <img
-                  src={item.images.fixed_width.url}
-                  style={{
-                    width: item.images.fixed_width.width + "px",
-                    height: item.images.fixed_width.height + "px",
-                  }}
-                  className="card-img-top"
-                  alt={item.username}
-                />
-                <div className="card-body">
-                  <button
-                    className="btn btn-success"
-                    onClick={() =>
-                      handleRemoveImage(item.images.fixed_width.url)
-                    }
-                    title="Add My Favorite"
+          value.map((item) => (
+            <div
+              key={item.id}
+              className="card"
+              style={{ position: "relative" }}
+            >
+              <img
+                src={item.images.fixed_width.url}
+                className="rounded gridForItem"
+                alt={item.username}
+              />
+              <div className="card-footers overlay">
+                <button
+                  className="btn btn-danger text"
+                  onClick={() => handleRemoveImage(item.images.fixed_width.url)}
+                  title="Add My Favorite"
+                >
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    className="bi bi-trash-fill"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      className="bi bi-trash2"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M3.18 4l1.528 9.164a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836L12.82 4H3.18zm.541 9.329A2 2 0 0 0 5.694 15h4.612a2 2 0 0 0 1.973-1.671L14 3H2l1.721 10.329z"
-                      />
-                      <path d="M14 3c0 1.105-2.686 2-6 2s-6-.895-6-2 2.686-2 6-2 6 .895 6 2z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M12.9 3c-.18-.14-.497-.307-.974-.466C10.967 2.214 9.58 2 8 2s-2.968.215-3.926.534c-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466zM8 5c3.314 0 6-.895 6-2s-2.686-2-6-2-6 .895-6 2 2.686 2 6 2z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    <path
+                      fillRule="evenodd"
+                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
           ))}
       </div>
-      {value.length < 1 && <p>No have Data</p>}
+      {value.length < 1 && (
+        <div className="emptyImg">
+          <h3 className='text-emptyImg'>Empty!</h3>
+        </div>
+      )}
     </Layout>
   );
 };
