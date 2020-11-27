@@ -110,7 +110,9 @@
   -webkit-text-fill-color: transparent !important;
   animation: shine 3s linear infinite !important;
 }
-
+#formSearch.hideFormSearch{
+  display: none;
+}
 @keyframes shine {
   10% {
     opacity: 1;

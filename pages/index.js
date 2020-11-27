@@ -13,8 +13,9 @@ function Index({ data }) {
   const [next, setNext] = useState(4);
   const [saveImgLocalStorage, setSaveImgLocalStorage] = useState([]);
   const [fetchImgFromUrl, setFetchImgFromUrl] = useState([]);
+  const [lengthData, setLengthData] = useState(data.length);
   //save img to myfavorite
-  const handleClick = (item) => {
+  const handleAddImgToFavorite = (item) => {
     if (saveImgLocalStorage.indexOf(item) == -1) {
       showSuccess();
       return setSaveImgLocalStorage((state) => [...state, item]);
@@ -38,14 +39,17 @@ function Index({ data }) {
   };
   const handleShowMorePicture = () => {
     setNext(next + QUANTITY_PER_PAGE);
+    setLengthData(lengthData - QUANTITY_PER_PAGE);
   };
 
   useEffect(() => {
+    setLengthData(data.length - QUANTITY_PER_PAGE);
     getLocalStorage();
   }, []);
 
   useEffect(() => {
     setFetchImgFromUrl(data);
+    setLengthData(data.length - QUANTITY_PER_PAGE);
     setNext(QUANTITY_PER_PAGE);
   }, [data]);
 
@@ -67,7 +71,7 @@ function Index({ data }) {
         </div>
         <GirdImage
           listGif={fetchImgFromUrl.slice(0, next)}
-          handleClick={handleClick}
+          handleClick={handleAddImgToFavorite}
         />
         {fetchImgFromUrl.length < 1 && (
           <div className="indexPage-emptyImg">
@@ -80,7 +84,7 @@ function Index({ data }) {
             disabled={false}
             onClick={handleShowMorePicture}
           >
-            Fetch More
+            Fetch More ({lengthData})
           </button>
         )}
       </Layout>

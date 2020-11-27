@@ -19,7 +19,7 @@ const Search = () => {
   };
 
   const formSearchGif = () => (
-    <form className='form_search' onSubmit={clickSubmit}>
+    <form className='form_search' id='formSearch' onSubmit={clickSubmit}>
       <div
         className="form-group inputSearch_Btn"
       >

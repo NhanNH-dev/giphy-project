@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
+import { withRouter } from "next/router";
 import { TRASH } from "../public/svg";
 
-const MyFavorite = () => {
+const MyFavorite = ({ router }) => {
   const [value, setValue] = useState([]);
 
   const handleRemoveImage = (itemRemove) => {
@@ -15,6 +16,17 @@ const MyFavorite = () => {
     showNotification();
     setValue(filteredItems);
   };
+
+  const hideFormSearch = () => {
+    var x = document.getElementById("formSearch");
+    x.className = "hideFormSearch";
+  };
+
+  useEffect(() => {
+    if (router.route === "/myfavorite") {
+      hideFormSearch();
+    }
+  }, [router]);
 
   useEffect(() => {
     const json = localStorage.getItem("my-favorite" || undefined);
@@ -74,4 +86,4 @@ const MyFavorite = () => {
   );
 };
 
-export default MyFavorite;
+export default withRouter(MyFavorite);
