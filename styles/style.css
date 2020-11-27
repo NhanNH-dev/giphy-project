@@ -8,7 +8,7 @@
 .myfavorite {
   color: rgb(26, 37, 37);
 }
-.navItem{
+.navItem {
   cursor: pointer;
   font-size: 20px;
   font-style: italic;
@@ -22,10 +22,34 @@
 .marginUl {
   margin-right: auto;
 }
-.form-group{
+.form-group {
   margin-bottom: 0;
 }
-
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008cba;
+  overflow: hidden;
+  width: 80%;
+  height: 0;
+  transition: 0.5s ease;
+}
+.card:hover .overlay, .card:active .overlay {
+  height: 40%;
+}
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
 @media only screen and (max-width: 768px) {
   .marginUl {
     margin: 0;
@@ -35,11 +59,11 @@
   }
   .inputSearch_Btn {
     width: 100%;
-    margin: 0
-  }  
+    margin: 0;
+  }
 }
-@media only screen and (max-width:352px) {
-  .form-control::placeholder{
+@media only screen and (max-width: 352px) {
+  .form-control::placeholder {
     font-size: 12px;
   }
 }
